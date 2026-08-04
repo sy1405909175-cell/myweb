@@ -1,0 +1,150 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.45)
+    ),
+    url("../images/bg.jpg");
+
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-family:
+    "Microsoft YaHei",
+    sans-serif;
+
+}
+
+
+/* 中间区域 */
+
+.container{
+
+    text-align:center;
+
+}
+
+
+/* 标题 */
+
+h1{
+
+    font-size:70px;
+
+    letter-spacing:5px;
+
+    margin-bottom:20px;
+
+}
+
+
+/* 副标题 */
+
+.subtitle{
+
+    font-size:20px;
+
+    opacity:0.8;
+
+    margin-bottom:50px;
+
+}
+
+
+
+/* 按钮区域 */
+
+.buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+
+/* 按钮 */
+
+button{
+
+
+    width:280px;
+
+    height:60px;
+
+
+    border:none;
+
+    border-radius:30px;
+
+
+    background:
+    rgba(255,255,255,0.15);
+
+
+    color:white;
+
+
+    font-size:20px;
+
+
+    cursor:pointer;
+
+
+    backdrop-filter:blur(10px);
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+button:hover{
+
+
+    transform:scale(1.08);
+
+
+    background:
+    rgba(255,255,255,0.35);
+
+
+}
+
+
+/* 底部 */
+
+
+footer{
+
+    position:absolute;
+
+    bottom:20px;
+
+    opacity:0.7;
+
+}
