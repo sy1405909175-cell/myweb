@@ -1,150 +1,383 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
-body{
+/* =========================
+   整个页面
+   ========================= */
 
-    min-height:100vh;
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
 
     background:
-    linear-gradient(
-    rgba(0,0,0,0.45),
-    rgba(0,0,0,0.45)
-    ),
-    url("../images/bg.jpg");
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("../images/bg.jpg");
 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 
-    background-size:cover;
-    background-position:center;
+    display: flex;
+    flex-direction: column;
 
-    display:flex;
+    justify-content: center;
+    align-items: center;
 
-    justify-content:center;
-
-    align-items:center;
-
-    color:white;
+    color: white;
 
     font-family:
-    "Microsoft YaHei",
-    sans-serif;
+        "Microsoft YaHei",
+        "Noto Sans SC",
+        sans-serif;
 
+    overflow-x: hidden;
 }
 
 
-/* 中间区域 */
+/* =========================
+   中间区域
+   ========================= */
 
-.container{
+.container {
+    width: 100%;
+    max-width: 900px;
 
-    text-align:center;
+    padding: 30px 20px;
 
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
 }
 
 
-/* 标题 */
+/* =========================
+   标题
+   ========================= */
 
-h1{
+h1 {
+    font-size: clamp(42px, 6vw, 70px);
 
-    font-size:70px;
+    line-height: 1.2;
 
-    letter-spacing:5px;
+    letter-spacing: 5px;
 
-    margin-bottom:20px;
+    margin-bottom: 20px;
 
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.6);
 }
 
 
-/* 副标题 */
+/* =========================
+   副标题
+   ========================= */
 
-.subtitle{
+.subtitle {
+    font-size: clamp(16px, 2vw, 20px);
 
-    font-size:20px;
+    line-height: 1.6;
 
-    opacity:0.8;
+    opacity: 0.85;
 
-    margin-bottom:50px;
+    margin-bottom: 45px;
 
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 
+/* =========================
+   按钮区域
+   ========================= */
 
-/* 按钮区域 */
+.buttons {
+    width: 100%;
 
-.buttons{
+    display: flex;
 
-    display:flex;
+    flex-direction: column;
 
-    flex-direction:column;
+    align-items: center;
 
-    gap:20px;
-
+    gap: 18px;
 }
 
 
+/* =========================
+   按钮链接
+   ========================= */
 
-/* 按钮 */
+.buttons a {
+    text-decoration: none;
 
-button{
+    display: block;
+
+    width: min(280px, 85vw);
+}
 
 
-    width:280px;
+/* =========================
+   按钮
+   ========================= */
 
-    height:60px;
+button {
 
+    width: 100%;
 
-    border:none;
+    min-height: 58px;
 
-    border-radius:30px;
+    padding: 12px 20px;
 
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 30px;
 
     background:
-    rgba(255,255,255,0.15);
+        rgba(255, 255, 255, 0.15);
 
+    color: white;
 
-    color:white;
+    font-size: clamp(17px, 2vw, 20px);
 
+    font-family:
+        "Microsoft YaHei",
+        "Noto Sans SC",
+        sans-serif;
 
-    font-size:20px;
+    cursor: pointer;
 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
-    cursor:pointer;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
 
-
-    backdrop-filter:blur(10px);
-
-
-    transition:0.3s;
-
-
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 
+/* =========================
+   鼠标悬停
+   ========================= */
 
-button:hover{
+button:hover {
 
-
-    transform:scale(1.08);
-
+    transform: scale(1.06);
 
     background:
-    rgba(255,255,255,0.35);
+        rgba(255, 255, 255, 0.30);
 
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   手机点击
+   ========================= */
+
+button:active {
+
+    transform: scale(0.97);
 
 }
 
 
-/* 底部 */
+/* =========================
+   下载提示
+   ========================= */
+
+.download-tip {
+
+    max-width: 500px;
+
+    margin-top: 25px;
+
+    padding: 0 15px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    opacity: 0.75;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.6);
+}
 
 
-footer{
+/* =========================
+   返回按钮
+   ========================= */
 
-    position:absolute;
+.container > a:not(.buttons a) {
 
-    bottom:20px;
+    text-decoration: none;
+}
 
-    opacity:0.7;
+
+/* =========================
+   底部版权
+   ========================= */
+
+footer {
+
+    position: fixed;
+
+    left: 0;
+    bottom: 15px;
+
+    width: 100%;
+
+    text-align: center;
+
+    padding: 0 15px;
+
+    font-size: 14px;
+
+    opacity: 0.7;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.7);
+
+    z-index: 3;
+}
+
+
+/* =========================
+   手机端
+   ========================= */
+
+@media (max-width: 768px) {
+
+    body {
+
+        background:
+            linear-gradient(
+                rgba(0, 0, 0, 0.42),
+                rgba(0, 0, 0, 0.42)
+            ),
+            url("../images/bg-mobile.jpg");
+
+        background-size: cover;
+
+        background-position: center center;
+
+        background-attachment: scroll;
+    }
+
+
+    .container {
+
+        padding:
+
+            25px 15px;
+
+        justify-content: center;
+    }
+
+
+    h1 {
+
+        font-size: clamp(38px, 12vw, 55px);
+
+        letter-spacing: 3px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .subtitle {
+
+        font-size: 16px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .buttons {
+
+        gap: 15px;
+    }
+
+
+    .buttons a {
+
+        width: min(300px, 85vw);
+    }
+
+
+    button {
+
+        min-height: 56px;
+
+        font-size: 18px;
+    }
+
+
+    footer {
+
+        bottom: 10px;
+
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================
+   很小的手机
+   ========================= */
+
+@media (max-width: 400px) {
+
+    .container {
+
+        padding:
+            20px 12px;
+    }
+
+
+    h1 {
+
+        font-size: 38px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .subtitle {
+
+        margin-bottom: 25px;
+    }
+
+
+    .buttons {
+
+        gap: 12px;
+    }
+
+
+    button {
+
+        min-height: 52px;
+
+        font-size: 17px;
+    }
 
 }
